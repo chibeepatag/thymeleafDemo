@@ -1,0 +1,18 @@
+	<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<div th:fragment="header">
+	<div class="banner">
+		<img src="images/PFM_logo.png" /> <span class="title">Patag
+			Family Mart</span> <span class="tagline">We've got it all for you.</span>
+		 <span class="date" th:text="'Today is ' + ${#calendars.format(today,'MM-dd-YYYY')}">13 February 2011</span>	
+	</div>
+	</div>
+	
+	</body>
+</html>

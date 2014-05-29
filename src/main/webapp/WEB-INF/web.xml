@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>Thymeleaf Example</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>cart</servlet-name>
+		<servlet-class>javabeat.net.thymeleaf.servlets.CartServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>thymeleafexample</servlet-name>
+		<servlet-class>javabeat.net.thymeleaf.servlets.ThymeleafHelloWorldExample</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AddToCart</display-name>
+		<servlet-name>AddToCart</servlet-name>
+		<servlet-class>javabeat.net.thymeleaf.servlets.AddToCart</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AboutUs</display-name>
+		<servlet-name>AboutUs</servlet-name>
+		<servlet-class>javabeat.net.thymeleaf.servlets.AboutUs</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>thymeleafexample</servlet-name>
+		<url-pattern>/thymeleafexample</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>cart</servlet-name>
+		<url-pattern>/cart</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AddToCart</servlet-name>
+		<url-pattern>/addToCart</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AboutUs</servlet-name>
+		<url-pattern>/AboutUs</url-pattern>
+	</servlet-mapping>
+
+
+
+</web-app>

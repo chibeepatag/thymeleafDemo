@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" language="javascript" src="ajax1.js"></script>
+<script type="text/javascript" language="javascript" src="cart.js"></script>
+<script type="text/javascript" language="javascript"
+	src="json_sans_eval.js"></script>
+<script type="text/javascript" language="javascript" src="dynamicCss.js"></script>
+
+</head>
+<body>
+  <div th:include="header::header">headerhere</div>	
+	<div class="catalog">
+		<h2>Catalog</h2>
+		<table id="catalogTable">
+			<thead>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Unit Price</th>
+				<th></th>					
+			</thead>
+			<tbody class="item">
+				<tr th:each="item : ${items}">
+ 					<td th:text="${item.name}">Onions</td>
+					<td th:text="${item.description}">Onions</td>										
+					<td th:text="${'$' + #numbers.formatDecimal(item.price, 0, 'COMMA', 2, 'POINT')}">Onions</td>					
+					<td><button th:onclick="'javascript:addToCart(\'' + ${item.code} + '\');'" >Add To Cart</button></td>
+				</tr>
+			</tbody>
+		</table>
+		<br/>
+		<a href="AboutUs">About Us</a>
+	</div>
+	<div class="cart">
+		<h2>Cart Contents</h2>
+		<table id="contents">
+			<thead>
+				<th>Name</th>
+				<th>Quantity</th>
+				<th>Price</th>				
+			</thead>
+			<tbody id="purchases">
+				<tr th:each="cartItem : ${cart}">
+					<td th:text="${cartItem.key.name}"></td>
+					<td th:text="${cartItem.value}"></td>
+					<td th:text="${cartItem.key.price}"></td>							
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>
