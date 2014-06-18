@@ -32,6 +32,13 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<servlet-name>AboutUs</servlet-name>
 		<servlet-class>javabeat.net.thymeleaf.servlets.AboutUs</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>TestServlet</display-name>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>javabeat.net.thymeleaf.servlets.TestServlet</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>thymeleafexample</servlet-name>
@@ -49,6 +56,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	<servlet-mapping>
 		<servlet-name>AboutUs</servlet-name>
 		<url-pattern>/AboutUs</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/TestServlet</url-pattern>
 	</servlet-mapping>
 
 
